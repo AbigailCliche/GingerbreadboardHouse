@@ -45,13 +45,14 @@ void wax_warmer()
 	warmer = ON;
 	while(1)
 	{
+		int power = (int) (100-100*float(temp_sensor)/40000);
 		if ( warmer == ON)
 		{
 			softPwmWrite(6, 20);
 		}
 		else
 		{
-			softPwmWrite(6, 20);
+			softPwmWrite(6, 00);
 		}
 	}
 }
@@ -87,12 +88,12 @@ void read_analog_ins()
 	while(1)
 	{
 		temp_sensor = analogRead(AD_BASE+0);
-		if (temp_sensor > 22000)  // TODO: Find real threshold value
-		{
-			warmer = ON;
-		}else{
-			warmer = OFF;
-		}
+		//if (temp_sensor > 22000)  // TODO: Find real threshold value
+		//{
+		//	warmer = ON;
+		//}else{
+		//	warmer = OFF;
+		//}
 		photocell = analogRead(AD_BASE+1);
 		//cout << "Photocell: " << photocell << endl;
 		if (photocell > 16000)
@@ -116,8 +117,9 @@ int main()
 	
 	// Set up tree control switch and motor
 	pinMode (1, INPUT) ;
-	pullUpDnControl (1,PUD_DOWN) ;
-	softPwmCreate(7, 0, 100) ; // GPIO 7 Motor
+	//pinMode (5, OUTPUT) ;
+	//pullUpDnControl (1,PUD_DOWN) ;
+	softPwmCreate(5, 0, 100) ; // GPIO 7 Motor
 	
 	// Start Threads
 	thread t2(manage_ble);
@@ -127,39 +129,49 @@ int main()
 	// Tree control logic
 	int music = OFF;
 	int ppid;
+	bool flipped=false;
 	while(1) 
 	{
 		
 		//cout << digitalRead(1) << endl;
-		if (digitalRead(1) == 1)
+		if (digitalRead(1) == 1 && flipped==false)
 		{
+			flipped = true;
+			softPwmWrite(5, 35);
 			if (music == OFF){
+				
 				music = ON;
 				cout << "Playing music" << endl;
 				ppid=fork();
 				if (ppid==0){
-					execlp("bash", " ", "playMusic.sh", NULL);
-					execlp("\n", NULL);
+					//if (music == OFF){
+						music = ON;
+						execlp("bash", " ", "playMusic.sh", NULL);
+						execlp("\n", NULL);
+					//}
+					_exit(0);
 					return 0;
 				}
 			}
-			softPwmWrite(7, 80);
 		}
-		else
+		else if(digitalRead(1)==0)
 		{
+			flipped=false;
+			softPwmWrite(5, 0);
 			if (music == ON){
+				
 				music = OFF;
-				if((ppid=fork())==0){
+				//if((ppid=fork())==0){
 					cout << "Killing music" << endl;
-					execlp("bash", " ", "killMusic.sh");
-					execlp("bash", " ", "killMusic.sh");
-					return 0;
-				}
-				//system("killall omxplayer.bin");
+					//execlp("bash", " ", "killMusic.sh");
+					//execlp("bash", " ", "killMusic.sh");
+					//return 0;
+				//}
+				system("killall omxplayer.bin");
 			}
-			softPwmWrite(7, 0);
 		}
 		//cout << "I'm in main()!"<< endl;
+		sleep(0.005);
 		std::this_thread::sleep_for(std::chrono::seconds{});
 	}
 	
