@@ -1,6 +1,6 @@
 ## This is a Gingerbreadboard House
 
-This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock as a final course project for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology. 
+This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology. 
 
 The goal was to create holiday decor that tickles all of the senses . . . except for taste, ironically. 
 
@@ -25,7 +25,7 @@ Diagram
 | Bluefruit UART Friend | 1 |
 | LED Light String | 1 |
 | 8GB SD Card | 1 |
-| Tricolor LED | 2 |
+| Green or Yellow LED | 2 |
 | Analog Speaker | 1 |
 | [Dual H-Bridge](https://www.digikey.com/en/products/detail/sparkfun-electronics/ROB-14450/7915576?utm_adgroup=Evaluation%20and%20Demonstration%20Boards%20and%20Kits&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Product_Development%20Boards%2C%20Kits%2C%20Programmers&utm_term=&utm_content=Evaluation%20and%20Demonstration%20Boards%20and%20Kits&gclid=Cj0KCQiA2af-BRDzARIsAIVQUOdxqqHYdTwMKlwcLaPJsxsejbrNkKA72xdS0uOuaSbkk1pZdwntzpMaAtv9EALw_wcB) | 1 |
 | Fancy Feast Can | 1 |
@@ -37,8 +37,8 @@ Diagram
 | I2C A to D Converter | 1 |
 | Photo Resistor | 1 |
 | Analog Temperature Sensor | 1 |
-|  | 1 |
-|  | 1 |
+| Relay | 1 |
+| [Peltier Thermo Module](https://www.adafruit.com/product/1331?gclid=Cj0KCQiA2af-BRDzARIsAIVQUOdZAbHClrYFSsmMw1SOXrySN1djDE4DO7kTtrcx7ZERTygEYAqd_CMaApgZEALw_wcB)| 1 |
 |  | 1 |
 |  | 1 |
 |  | 1 |
