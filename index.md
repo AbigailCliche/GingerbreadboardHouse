@@ -1,12 +1,26 @@
 ## This is a Gingerbreadboard House
 
-This project was inspired by the Christmas season with the goal of creating holiday decor that tickles all of the senses . . . except for taste, ironically. 
+This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock as a final course project for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology with the goal of creating holiday decor that tickles all of the senses . . . except for taste, ironically. 
 
-This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock as a final course project for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology.
+### System Diagram and Components List
 
-### Markdown
+Diagram
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+| Parts List | Quantity |
+| ----------- | ----------- |
+| Raspberry Pi v4 | 1 |
+| Wall plug 5V power supply | 1 |
+| Bluefruit UART Friend | 1 |
+| LED Light String | 1 |
+|  | 1 |
+|  | 1 |
+|  | 1 |
+
+## Instructions for Duplication
+
+1. Procure a sturdy yet thin material (we used MDF) for your house, and cut out of it four rectangles of equal size and a pentagonal facade. All edges of the facade except for the base should be equal to the hight of the four rectangles. Drill two small holes at the base of the the first floor windows. You will eventually place tricolor LED "candles" there. Hot glue the pieces into a house shape on top of a base, leaving the "back" of the hosue open.
+
+2. 
 
 ```markdown
 Syntax highlighted code block
