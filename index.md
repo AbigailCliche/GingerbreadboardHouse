@@ -6,9 +6,12 @@ The goal was to create holiday decor that tickles all of the senses . . . except
 
 | Contents |
 | ----------- |
-| [System Diagram](#system-diagram) |
+| [System Block Diagram](#system-diagram) |
+| Schematic |
 | [Components List](#components-list) |
 | [Construction Instructions](#construction-instructions) |
+| Photos |
+| Demo |
 
 # System Diagram
 
