@@ -13,18 +13,26 @@ The goal was to create holiday decor that tickles all of the senses . . . except
 | [Instructions](#instructions) |
 | [Demo](#demo) |
 
-# Features
+## Features
+* Raspberry Pi v4
+  * Using [WiringPi](http://wiringpi.com/)
+* LED Christmas Lights
+  * Modified Storebought LEDs attached with screw terminals
+  * Night mode with LED effects
+* Bluefruit BLE Control of Peltier Wax Melter
+* External Power Supply
+* Christmas Music and Spinning Tree
 
-# Photos
+## Photos
 
 ![Image](front.jpg)
 ![Image](back.jpg)
 
-# System Diagram
+## Block Diagram
 
 ![Diagram](https://docs.google.com/drawings/d/e/2PACX-1vTWjPZ-bOA0e_O0Pe_Sex509pHJ4QLMW8QS28_QGlQi4vUylisdC-Kt_oVLWizGCfXbXGdRNt-CPInf/pub?w=960&h=720)
 
-# Components List
+## Components List
 
 | Component | Quantity |
 | ----------- | ----------- |
