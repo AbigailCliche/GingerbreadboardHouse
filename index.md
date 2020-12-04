@@ -4,13 +4,11 @@ This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcoc
 
 The goal was to create holiday decor that tickles all of the senses . . . except for taste, ironically. 
 
-Contents:
-
-[System Diagram](#system-diagram)
-
-[Components List](#components-list)
-
-[Construction Instructions](#construction-instructions)
+| Contents |
+| ----------- |
+| [System Diagram](#system-diagram) |
+| [Components List](#components-list) |
+| [Construction Instructions](#construction-instructions) |
 
 # System Diagram
 
