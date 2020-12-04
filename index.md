@@ -40,12 +40,7 @@ Diagram
 | Analog Temperature Sensor | 1 |
 | Relay | 1 |
 | [Peltier Thermo Module](https://www.adafruit.com/product/1331?gclid=Cj0KCQiA2af-BRDzARIsAIVQUOdZAbHClrYFSsmMw1SOXrySN1djDE4DO7kTtrcx7ZERTygEYAqd_CMaApgZEALw_wcB)| 1 |
-|  | 1 |
-|  | 1 |
-|  | 1 |
-|  | 1 |
-|  | 1 |
-|  | 1 |
+| Screw Terminals | 2 |
 
 ## Construction Instructions
 
