@@ -6,6 +6,8 @@
 #include <softPwm.h>
 #include <cmath>
 #include <ads1115.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #define AD_BASE 160
 #define OFF 0
@@ -14,7 +16,6 @@
 using namespace std; 
 
 volatile bool night = false;
-volatile int music = OFF;
 volatile double photocell, temp_sensor;
 int warmer = OFF;
 
@@ -55,14 +56,7 @@ void wax_warmer()
 	}
 }
 
-void start_music(){
-	execlp("usr/bin/omxplayer", " ", "/home/pi/Music/oh-christmas-tree.mp3", NULL);
-	music = ON;
-}
-void kill_music(){
-	system("killall omxplayer.bin");
-	music = OFF;
-}
+
 
 void manage_lights()
 {
@@ -71,7 +65,7 @@ void manage_lights()
 	
 	while (1)
 	{
-		cout << "Night: " << night << endl;
+		//cout << "Night: " << night << endl;
 		if(night == true)
 		{
 			softPwmWrite (0, 10);
@@ -100,7 +94,7 @@ void read_analog_ins()
 			warmer = OFF;
 		}
 		photocell = analogRead(AD_BASE+1);
-		cout << "Photocell: " << photocell << endl;
+		//cout << "Photocell: " << photocell << endl;
 		if (photocell > 16000)
 		{
 			night = true;
@@ -131,24 +125,42 @@ int main()
 	thread t4(read_analog_ins);
 	
 	// Tree control logic
+	int music = OFF;
+	int ppid;
 	while(1) 
 	{
+		
+		//cout << digitalRead(1) << endl;
 		if (digitalRead(1) == 1)
 		{
 			if (music == OFF){
-				start_music();
+				music = ON;
+				cout << "Playing music" << endl;
+				ppid=fork();
+				if (ppid==0){
+					execlp("bash", " ", "playMusic.sh", NULL);
+					execlp("\n", NULL);
+					return 0;
+				}
 			}
 			softPwmWrite(7, 80);
 		}
 		else
 		{
 			if (music == ON){
-				kill_music();
+				music = OFF;
+				if((ppid=fork())==0){
+					cout << "Killing music" << endl;
+					execlp("bash", " ", "killMusic.sh");
+					execlp("bash", " ", "killMusic.sh");
+					return 0;
+				}
+				//system("killall omxplayer.bin");
 			}
 			softPwmWrite(7, 0);
 		}
 		//cout << "I'm in main()!"<< endl;
-		std::this_thread::sleep_for(std::chrono::microseconds{});
+		std::this_thread::sleep_for(std::chrono::seconds{});
 	}
 	
 	//t2.join();
