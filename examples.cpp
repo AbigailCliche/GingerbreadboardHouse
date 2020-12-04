@@ -38,8 +38,8 @@ int main (void)
   }**/
   
   // PWM out
-  softPwmCreate(0, 0, 100) ;
-  softPwmWrite (0, 50) ;
+  softPwmCreate(1, 0, 100) ;
+  softPwmWrite (1, 50) ;
   while(1);
   
   return 0 ;
