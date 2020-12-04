@@ -6,11 +6,14 @@ The goal was to create holiday decor that tickles all of the senses . . . except
 
 | Contents |
 | ----------- |
+| [Features](#features) |
 | [System Block Diagram](#system-diagram) |
 | [Components List](#components-list) |
-| [Construction Instructions](#construction-instructions) |
+| [Instructions](#instructions) |
 | Photos |
 | Demo |
+
+# Features
 
 # System Diagram
 
@@ -46,6 +49,12 @@ The goal was to create holiday decor that tickles all of the senses . . . except
 1. Procure a sturdy yet thin material (we used MDF) for your house, and cut out of it four rectangles of equal size and a pentagonal facade. All edges of the facade except for the base should be equal to the hight of the four rectangles. Drill two small holes at the base of the the first floor windows. You will eventually place tricolor LED "candles" there. Hot glue the pieces into a house shape on top of a base, leaving the "back" of the hosue open.
 
 2. Assemble all components following the block diagram above and insert them into the house enclosure.
+
+3. Load an image of RaspberryPi OS (formery Raspbian) onto the 8GB SD card and insert into the Pi. 
+
+3. Follow the normal pi setup procedure then download the [source code repository](https://github.com/AbigailCliche/GingerbreadboardHouse).
+
+4. Compile the code and run ```main```. You should now be able to use all features of the house and connect it to the [Bluefruit Connect App](https://learn.adafruit.com/bluefruit-le-connect).
 
 ## Demo
 [Youtube Demo Link](https://youtu.be/ceOeai3Cwcs)
