@@ -1,6 +1,8 @@
 ## This is a Gingerbreadboard House
 
-This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock as a final course project for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology with the goal of creating holiday decor that tickles all of the senses . . . except for taste, ironically. 
+This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock as a final course project for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology. 
+
+The goal was to create holiday decor that tickles all of the senses . . . except for taste, ironically. 
 
 ### System Diagram and Components List
 
