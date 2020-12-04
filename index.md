@@ -17,9 +17,8 @@ The goal was to create holiday decor that tickles all of the senses . . . except
 
 # Photos
 
-![Image](https://drive.google.com/file/d/1Z0M65QvSygZYm6RcfOl4_NQ0Ls60Xav-/view?usp=sharing)
-![Image]()
-![Image]()
+![Image](front.jpg)
+![Image](back.jpg)
 
 # System Diagram
 
