@@ -7,15 +7,16 @@
 #include <cmath>
 #include <ads1115.h>
 
-#define AD_BASE 42
+#define AD_BASE 160
 #define OFF 0
 #define ON 1
 
 using namespace std; 
 
 volatile bool night = false;
+volatile int music = OFF;
 volatile double photocell, temp_sensor;
-int warmer = 0;
+int warmer = OFF;
 
 int manage_ble()
 {
@@ -39,12 +40,28 @@ int manage_ble()
 
 void wax_warmer()
 {
-	
+	softPwmCreate(6, 0, 100); // GPIO  Peltier Device
+	warmer = ON;
+	while(1)
+	{
+		if ( warmer == ON)
+		{
+			softPwmWrite(6, 20);
+		}
+		else
+		{
+			softPwmWrite(6, 20);
+		}
+	}
 }
 
-void button_callback()
-{
-	// Manage tree on variable
+void start_music(){
+	execlp("usr/bin/omxplayer", " ", "/home/pi/Music/oh-christmas-tree.mp3", NULL);
+	music = ON;
+}
+void kill_music(){
+	system("killall omxplayer.bin");
+	music = OFF;
 }
 
 void manage_lights()
@@ -54,10 +71,12 @@ void manage_lights()
 	
 	while (1)
 	{
-		if (night)
+		cout << "Night: " << night << endl;
+		if(night == true)
 		{
-			softPwmWrite (0, 20);
-			softPwmWrite (2, (100*rand()/float(RAND_MAX)));
+			softPwmWrite (0, 10);
+			softPwmWrite(2, 50);
+			//softPwmWrite(2, (100*rand()/float(RAND_MAX)));
 		}
 		else
 		{
@@ -81,6 +100,7 @@ void read_analog_ins()
 			warmer = OFF;
 		}
 		photocell = analogRead(AD_BASE+1);
+		cout << "Photocell: " << photocell << endl;
 		if (photocell > 16000)
 		{
 			night = true;
@@ -103,22 +123,28 @@ int main()
 	// Set up tree control switch and motor
 	pinMode (1, INPUT) ;
 	pullUpDnControl (1,PUD_DOWN) ;
-	softPwmCreate(7, 0, 100) ; 
+	softPwmCreate(7, 0, 100) ; // GPIO 7 Motor
 	
 	// Start Threads
 	thread t2(manage_ble);
 	thread t3(manage_lights);
-	//thread t3(read_analog_ins);
+	thread t4(read_analog_ins);
 	
 	// Tree control logic
 	while(1) 
 	{
 		if (digitalRead(1) == 1)
 		{
+			if (music == OFF){
+				start_music();
+			}
 			softPwmWrite(7, 80);
 		}
 		else
 		{
+			if (music == ON){
+				kill_music();
+			}
 			softPwmWrite(7, 0);
 		}
 		//cout << "I'm in main()!"<< endl;
