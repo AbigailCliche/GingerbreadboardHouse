@@ -1,8 +1,8 @@
-## Welcome to GitHub Pages
+## This is a Gingerbreadboard House
 
-You can use the [editor on GitHub](https://github.com/AbigailCliche/GingerbreadHouse/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This project was inspired by the Christmas season with the goal of creating holiday decor that tickles all of the senses . . . except for taste, ironically. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This faux gingerbread house was constructed by Abigail Cliche and Andrew Hathcock as a final course project for ECE 4180 (Embedded Systems Design) at The Georgia Intstitute of Technology.
 
 ### Markdown
 
