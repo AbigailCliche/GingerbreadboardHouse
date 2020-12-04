@@ -7,13 +7,19 @@ The goal was to create holiday decor that tickles all of the senses . . . except
 | Contents |
 | ----------- |
 | [Features](#features) |
+| [Photos](#photos) |
 | [System Block Diagram](#system-diagram) |
 | [Components List](#components-list) |
 | [Instructions](#instructions) |
-| Photos |
-| Demo |
+| [Demo](#demo) |
 
 # Features
+
+# Photos
+
+![Image](https://drive.google.com/file/d/1Z0M65QvSygZYm6RcfOl4_NQ0Ls60Xav-/view?usp=sharing)
+![Image]()
+![Image]()
 
 # System Diagram
 
